@@ -1,11 +1,11 @@
-import os
-from django.core.wsgi import get_wsgi_application
-from whitenoise.django import DjangoWhiteNoise
+# import os
+# from django.core.wsgi import get_wsgi_application
+# from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web.settings")
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web.settings")
 
-application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+# application = get_wsgi_application()
+# application = DjangoWhiteNoise(application)
 
 """
 WSGI config for web project.
@@ -16,10 +16,10 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/
 """
 
-# import os
+import os
 
-# from django.core.wsgi import get_wsgi_application
+from django.core.wsgi import get_wsgi_application
 
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web.settings')
 
-# application = get_wsgi_application()
+application = get_wsgi_application()
