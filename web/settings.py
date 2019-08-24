@@ -96,11 +96,11 @@ WSGI_APPLICATION = 'web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'social',
-        'PGUSER': 'postgres',
-        'PGPASSWORD': 'abcd@1993',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'NAME': 'daovh630pnotqj',
+        'PGUSER': 'qxauzvyasptadr',
+        'PGPASSWORD': 'e6413c42f172c361ad2644c1504503d064d0bb47b055250852754d678a3250a4',
+        'HOST': 'ec2-107-20-155-148.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
