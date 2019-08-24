@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from social.views import pehla
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',pehla,name="pehla"),   
 ]
