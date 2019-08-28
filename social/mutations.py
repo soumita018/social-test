@@ -1,7 +1,7 @@
 from graphene_django.forms.mutation import DjangoModelFormMutation
-from main.types import UserType,ProfileType,PostType,CommentType
-from main.models import User,Profile,Post,Comment
-from main.forms import UserForm,ProfileForm,PostForm,CommentForm
+from social.types import UserType,ProfileType,PostType,CommentType
+from social.models import User,Profile,Post,Comment
+from social.forms import UserForm,ProfileForm,PostForm,CommentForm
 from graphene import Field,AbstractType,String,ID,Boolean,Mutation,List
 
 
