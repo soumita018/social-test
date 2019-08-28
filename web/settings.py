@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
+    'corsheaders',
+    'graphene_django',
 
     'social',
 ]
@@ -96,6 +98,9 @@ WSGI_APPLICATION = 'web.wsgi.application'
 #     }
 # }
 
+GRAPHENE = {
+    'SCHEMA': 'web.schema.schema'
+}
 
 DATABASES = {
     'default': {
