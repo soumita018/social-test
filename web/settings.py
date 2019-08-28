@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
@@ -98,16 +100,18 @@ WSGI_APPLICATION = 'web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'daovh630pnotqj',
-        'PGUSER': 'qxauzvyasptadr',
-        'PGPASSWORD': 'e6413c42f172c361ad2644c1504503d064d0bb47b055250852754d678a3250a4',
-        'HOST': 'ec2-107-20-155-148.compute-1.amazonaws.com',
+        'NAME': 'd7d5h116q9h6ra',
+        'PGUSER': 'qjhaebntfortja',
+        'PGPASSWORD': 'ea59e345c62a27a4d0764facff56576d562b3968c50b8dd7d2b94fc6e795929a',
+        'HOST': 'ec2-54-235-114-242.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
