@@ -64,6 +64,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         unique=True,
     )
     image = models.ImageField(blank=True,null=True)
+    image_url = models.TextField(blank=True,null=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=True)
@@ -75,6 +76,14 @@ class User(AbstractBaseUser,PermissionsMixin):
 
     def __str__(self):
         return self.phone
+
+    def save(self, *args, **kwargs):
+
+        if self.image:
+            self.image_url = self.image.url()
+        super().save(*args, **kwargs)
+        
+
 
 class Profile(models.Model):
   
@@ -98,9 +107,16 @@ class Post(models.Model):
   post_text = models.TextField(blank=True,null=True)
   image = models.ImageField(blank=True,null=True)
   posted_time = models.DateTimeField(auto_now_add=True,blank=True,null=True)
+  image_url = models.TextField(blank=True,null=True)
 
   def __str__(self):
         return self.posted_by.name
+    
+  def save(self, *args, **kwargs):
+
+        if self.image:
+            self.image_url = self.image.url()
+        super().save(*args, **kwargs)
 
 class Comment(models.Model):
   
@@ -114,6 +130,7 @@ class Comment(models.Model):
 
 
   
+
 
   
 

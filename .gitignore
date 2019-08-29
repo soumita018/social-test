@@ -10,3 +10,4 @@ Scripts/
 tcl
 Include
 migrations1
+settings1.py
