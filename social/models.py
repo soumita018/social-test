@@ -64,7 +64,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         unique=True,
     )
     image = models.ImageField(blank=True,null=True)
-    image_url = models.TextField(blank=True,null=True)
+   
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=True)
@@ -103,7 +103,7 @@ class Post(models.Model):
   post_text = models.TextField(blank=True,null=True)
   image = models.ImageField(blank=True,null=True)
   posted_time = models.DateTimeField(auto_now_add=True,blank=True,null=True)
-  image_url = models.TextField(blank=True,null=True)
+
 
   def __str__(self):
         return self.posted_by.name
@@ -120,16 +120,4 @@ class Comment(models.Model):
         return self.commented_by.name
 
 
-  
-
-
-def saveImage(sender, instance, **kwargs):
-    if instance.image:
-        instance.image_url = instance.image.url
-        instance.save()
-
-
-
-post_save.connect(saveImage, sender=User)
-post_save.connect(saveImage, sender=Post)
 
