@@ -77,11 +77,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     def __str__(self):
         return self.phone
 
-    def save(self, *args, **kwargs):
-
-        if self.image:
-            self.image_url = self.image.url
-        super().save(*args, **kwargs)
+    
         
 
 
@@ -112,11 +108,6 @@ class Post(models.Model):
   def __str__(self):
         return self.posted_by.name
     
-  def save(self, *args, **kwargs):
-
-        if self.image:
-            self.image_url = self.image.url
-        super().save(*args, **kwargs)
 
 class Comment(models.Model):
   
@@ -132,5 +123,11 @@ class Comment(models.Model):
   
 
 
-  
+def saveImage(sender, instance, **kwargs):
+    if instance.image:
+        instance.image_url(instance.image.url)
+
+
+post_save.connect(saveImage, sender=User)
+post_save.connect(saveImage, sender=Post)
 
