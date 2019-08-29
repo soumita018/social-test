@@ -80,7 +80,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     def save(self, *args, **kwargs):
 
         if self.image:
-            self.image_url = self.image.url()
+            self.image_url = self.image.url
         super().save(*args, **kwargs)
         
 
@@ -115,7 +115,7 @@ class Post(models.Model):
   def save(self, *args, **kwargs):
 
         if self.image:
-            self.image_url = self.image.url()
+            self.image_url = self.image.url
         super().save(*args, **kwargs)
 
 class Comment(models.Model):
