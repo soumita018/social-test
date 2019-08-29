@@ -210,8 +210,4 @@ AWS_DEFAULT_ACL = None
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-import boto3
-import boto3.session
-session = boto3.session.Session(region_name='eu-central-1')
-s3client = session.client('s3', config= boto3.session.Config(signature_version='s3v4'))
-s3client.get_object(Bucket=AWS_STORAGE_BUCKET_NAME, Key=AWS_ACCESS_KEY_ID)
+AWS_S3_REGION_NAME = 'eu-central-1'
