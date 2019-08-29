@@ -125,7 +125,8 @@ class Comment(models.Model):
 
 def saveImage(sender, instance, **kwargs):
     if instance.image:
-        instance.image_url(instance.image.url)
+        instance.image_url = instance.image.url
+        
 
 
 post_save.connect(saveImage, sender=User)
